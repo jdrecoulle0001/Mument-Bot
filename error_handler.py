@@ -40,13 +40,13 @@ class CommandErrorHandler(commands.Cog):
     else:
       if isinstance(error, commands.MissingRequiredArgument):
         if command_error_dict[ctx.command.name]:
-          await ctx.send("You fucked it up hey...\n" + command_error_dict[ctx.command.name])
+          await ctx.send("You messed it up hey...\n" + command_error_dict[ctx.command.name])
         else:
           await ctx.send("I don't know what you did wrong, bud.")
           print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
           traceback.print_exception(type(error), error, error.__traceback__, file = sys.stderr)
       else:
-        await ctx.send("Ahhh...mitch isn't in the channel. We'll get the fucker next time.")
+        await ctx.send("Ahhh...mitch isn't in the channel. We'll get the him next time.")
 
   @commands.command(name='repeat', aliases=['mimic', 'copy'])
   async def do_repeat(self, ctx, *, inp: str):
