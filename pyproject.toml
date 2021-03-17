@@ -10,6 +10,8 @@ flask = "^1.1.2"
 python-dotenv = "^0.15.0"
 discord = "^1.0.1"
 PyNaCl = "^1.4.0"
+spotipy = "^2.17.1"
+utils = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 

@@ -1,7 +1,7 @@
 from flask import Flask
 from threading import Thread
 
-app = Flask('')
+app = Flask('Mument Bot')
 
 @app.route('/')
 def home():
