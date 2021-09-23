@@ -23,9 +23,6 @@ import error_handler
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
-
 @bot.command(name='help')
 async def help(ctx, args=None):
   """
@@ -56,34 +53,34 @@ async def help(ctx, args=None):
       help_embed.add_field(name=args, value=bot.get_command(args).help)
 
   else:
-      help_embed.add_field(name="Idiot",
+      help_embed.add_field(name="Silly",
                             value="{}...That's not a command.".format(
                                 ctx.message.author.mention))
 
   await ctx.send(embed=help_embed)
 
 
-@bot.command(name='liked_tracks')
-async def liked_tracks(ctx, args=None):
-  # TODO: 
-  """
-    Implement Spotify Integration so that bot will play music from liked songs of user
-    param ctx: context of call (see Discord API Reference). Included with all bot commands
-  """ 
+# @bot.command(name='liked_tracks')
+# async def liked_tracks(ctx, args=None):
+#   # TODO: 
+#   """
+#     Implement Spotify Integration so that bot will play music from liked songs of user
+#     param ctx: context of call (see Discord API Reference). Included with all bot commands
+#   """ 
   
-  await ctx.send("This feature is still being implemented. Sorry :(")
-  return
+#   await ctx.send("This feature is still being implemented. Sorry :(")
+#   return
 
-  auth_manager = SpotifyClientCredentials()
+#   auth_manager = SpotifyClientCredentials()
   
-  sp = spotipy.Spotify(auth_manager=auth_manager)
+#   sp = spotipy.Spotify(auth_manager=auth_manager)
 
-  results = sp.current_user_saved_tracks()
+#   results = sp.current_user_saved_tracks()
 
-  tracks = enumerate(results['items'])
-  i = 0
-  while(i < 10):
-    print(tracks[i])
+#   tracks = enumerate(results['items'])
+#   i = 0
+#   while(i < 10):
+#     print(tracks[i])
 
 # Bot Command "$join"
 @bot.command(name='join')
