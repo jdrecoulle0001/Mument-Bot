@@ -15,10 +15,6 @@ client = discord.Client()
 
 bot = commands.Bot(command_prefix='$', help_command=None)
 
-import error_handler
-
-#error_handler.setup(bot)
-
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
